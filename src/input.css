@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap');
+html{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Nunito Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101010;
+    overflow: hidden;
+}
+.stars > div{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+.container {
+    width: 10%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    animation: containerRotate 10s infinite linear;
+}
+@keyframes containerRotate {
+    0%{
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.container.mercury{
+    width: 10%;
+    animation: containerRotate 15s infinite linear;
+    z-index: 10;
+}
+.container.venus{
+    width: 15%;
+    animation: containerRotate 20s infinite linear;
+    z-index: 9;
+}
+.container.earth{
+    width: 20%;
+    animation: containerRotate 25s infinite linear;
+    z-index: 8;
+}
+.container.mars{
+    width: 25%;
+    animation: containerRotate 30s infinite linear;
+    z-index: 7;
+}
+.container.jupiter{
+    width: 32%;
+    animation: containerRotate 35s infinite linear;
+    z-index: 6;
+}
+.container.saturn{
+    width: 38%;
+    animation: containerRotate 40s infinite linear;
+    z-index: 5;
+}
+.container.uranus{
+    width: 43%;
+    animation: containerRotate 45s infinite linear;
+    z-index: 4;
+}
+.container.neptune{
+    width: 48%;
+    animation: containerRotate 50s infinite linear;
+    z-index: 3;
+}
+.sun{
+    background-image: url(../public/images/sun.png);
+    background-size: contain;
+    background-position: center;
+    animation: sunRotate 20s linear infinite;
+}
+@keyframes sunRotate {
+    0%{
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.planet{
+    border-radius: 50%;
+    cursor: pointer;
+}
+.planet-des, .planet-details{
+    background: radial-gradient(circle, rgba(50,50,50,1) 0%, rgba(30,30,30,1) 100%);
+}
+.planet-info{
+    transition: .5s ease-in;
+}
+.planet-info.sunActive, .planet-info.mercuryActive, .planet-info.venusActive, .planet-info.earthActive, .planet-info.marsActive, .planet-info.jupiterActive, .planet-info.saturnActive, .planet-info.uranusActive, .planet-info.neptuneActive{
+    left: 2%;
+}
+
+
